@@ -1,0 +1,11 @@
+<ul *ngIf="emails.length !== 0" class="rounded-l-md m-1 w-full border border-b-0">
+    <li (click)="onEmailSelected(email)" class="border-b-2 p-2 hover:bg-sky-50 cursor-pointer" *ngFor="let email of emails">
+        <h4 class="text-lg text-black">{{email.fromAddr}}</h4>
+        <p class="text-blue-500">{{email.headerSubject}}</p>
+        <p class="text-gray-700 max-w-xs w-3/4 truncate break-words">{{email.html}}</p>
+    </li>
+</ul>
+<div *ngIf="emails.length === 0" class="p-2 h-full w-full flex items-center justify-center " >
+    <p>Sua caixa esta vazia</p>
+</div>
+

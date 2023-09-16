@@ -1,5 +1,7 @@
 # Coodesh
 
+This is a challenge by [Coodesh](https://coodesh.com/)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.2.
 
 ## Development server
@@ -25,3 +27,20 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## app custom Folder Structure
+
+Services -> folder where all requests are made, why is notification on services
+"if it makes no request?" because now I am using a local solution, but most notification solutions will use either firebase or some other api.
+
+Pages -> is where all pages of the website will be, led by their smart component and followed by dumb components
+
+Utils -> Folder used for reusable methods that could be used by other components and services in the application
+
+## Shared-types
+
+shared-types is a development pattern to share typing between front and back end, normally shared-types would be a third repo, but in this test case it is fine as just a folder
+
+## Cache
+
+currently Im using local storage, but I decided to separate my component to a utils folder so that later if we where to use some other form of storage it would be all in the same file
