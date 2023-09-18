@@ -68,3 +68,4 @@ currently Im using local storage, but I decided to separate my component to a ut
 adding .env file
 cypress tests
 show the refresh timer to the user by storing the last refresh time and comparing to Date.now
+add feedback to Copy on click and refresh on click using a portal library
