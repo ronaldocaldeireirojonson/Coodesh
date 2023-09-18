@@ -1,0 +1,16 @@
+
+<div [class.open]="open" class="drawer mr-1 border border-t-0 border-l-0" >
+    <div class="p-2 border border-t-0 rounded-none bg-gray-200">
+        <button (click)="onToggleIsOpen()" class="drawer-button mb-2">
+            <svg viewBox="0 0 24 24" class="w-6">
+                <path *ngIf="open" d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
+                <path *ngIf="!open" d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"></path>
+            </svg>
+        </button>
+        <h2 class="">Email</h2>
+    </div>
+    <div class="content flex flex-col h-full bg-gray-200">
+        <h4 class="m-2 text-black font-bold">{{open ? email?.headerSubject : ""}} </h4>
+        <div [innerHTML]="open ? email?.html : null" class="email-content p-2 m-1 mb-6 rounded-md border border-zinc-500 bg-white"></div>
+    </div>
+</div>
