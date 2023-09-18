@@ -2,6 +2,8 @@
 
 This is a challenge by [Coodesh](https://coodesh.com/)
 
+Deploy URL: https://main--prismatic-dasik-8c56b9.netlify.app/
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.2.
 
 ## Development server
@@ -34,6 +36,8 @@ Services -> folder where all requests are made, why is notification on services
 "if it makes no request?" because now I am using a local solution, but most notification solutions will use either firebase or some other api.
 
 Pages -> is where all pages of the website will be, led by their smart component and followed by dumb components
+
+    Home -> Folder where all components from the home page are located, every component is separated as sibilings
 
 Utils -> Folder used for reusable methods that could be used by other components and services in the application
 
