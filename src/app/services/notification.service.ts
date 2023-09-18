@@ -10,9 +10,10 @@ export class NotificationService {
   showNotification(email: SanatizedEmail) {
     if (Notification.permission !== 'granted') return;
     if (document.visibilityState !== 'hidden') return;
+    if (!email) return;
 
-    new Notification(email.fromAddr, {
-      body: email.headerSubject,
+    new Notification(email?.fromAddr ?? '', {
+      body: email?.headerSubject ?? '',
     });
   }
 

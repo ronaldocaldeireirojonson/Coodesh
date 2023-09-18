@@ -45,7 +45,6 @@ export class EmailListComponent implements OnInit, OnDestroy {
   }
 
   selectEmail(email: SanatizedEmail) {
-    console.log(email);
     this.inboxService.openEmail(email);
   }
 
