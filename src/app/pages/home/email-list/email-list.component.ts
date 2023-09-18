@@ -27,24 +27,21 @@ export class EmailListComponent implements OnInit, OnDestroy {
     this.sessionSubsctipion = this.sessionService.session$.subscribe((data) => {
       if (!data) return;
       this.currentId = data.id;
+      this.inboxService.getEmailList(this.currentId);
     });
 
-    if (!this.currentId) return;
+    this.inboxSubsctipion = this.inboxService.emailList$.subscribe((data) => {
+      if (!data) return;
 
-    this.inboxSubsctipion = this.inboxService
-      .getEmailList(this.currentId)
-      .valueChanges.subscribe(({ data }) => {
-        if (!data) return;
-
-        this.emails = data.session.mails.map((x) => {
-          return {
-            ...x,
-            html: this.sanitizer.bypassSecurityTrustHtml(x.html),
-          };
-        });
-
-        this.notificationService.showNotification(this.emails[0]);
+      this.emails = data.map((x) => {
+        return {
+          ...x,
+          html: this.sanitizer.bypassSecurityTrustHtml(x.html),
+        };
       });
+
+      this.notificationService.showNotification(this.emails[0]);
+    });
   }
 
   selectEmail(email: SanatizedEmail) {
