@@ -6,6 +6,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class EmailInputViewComponent {
   @Input() email: string = '';
+  @Input() timer: number = 0;
   @Output() refetchEvent = new EventEmitter();
   @Output() copyEvent = new EventEmitter();
 

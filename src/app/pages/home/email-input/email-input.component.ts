@@ -14,6 +14,7 @@ import {
 })
 export class EmailInputComponent implements OnInit, OnDestroy {
   sessionSubscription: Subscription | undefined;
+  emailSubscription: Subscription | undefined;
   currentEmail: string = '';
 
   constructor(
@@ -57,6 +58,7 @@ export class EmailInputComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
+    this.emailSubscription?.unsubscribe();
     this.sessionSubscription?.unsubscribe();
   }
 }

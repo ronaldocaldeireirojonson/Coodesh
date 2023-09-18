@@ -1,6 +1,6 @@
 .mail-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: max-content 1fr;
 }
 
 @media only screen and (max-width: 600px) {
